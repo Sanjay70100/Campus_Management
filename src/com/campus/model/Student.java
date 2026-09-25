@@ -1,6 +1,8 @@
 package com.campus.model;
 
-public class Student {
+import java.util.Arrays;
+
+public abstract class Student {
     // Encapsulation data hiding
     // instance variables
     private int studentId;
@@ -26,6 +28,9 @@ public class Student {
         this.marks = marks;
         studentCount++;
     }
+
+    // Abstract method: Every subclass MUST define this
+    public abstract void studentType();
 
     // getters
     public int getStudentId() {
@@ -84,7 +89,7 @@ public class Student {
     public void displayStudentInfo(boolean showMarks) {
         displayStudentDetails();
         if (showMarks) {
-            System.out.println("Marks: " + java.util.Arrays.toString(marks));
+            System.out.println("Marks: " + Arrays.toString(marks));
         }
     }
 
