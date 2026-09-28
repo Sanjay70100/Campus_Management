@@ -1,5 +1,6 @@
 package com.campus.app;
 
+import com.campus.model.ScholarshipStudent;
 import com.campus.model.Student;
 import com.campus.service.StudentService;
 import java.util.Scanner;
@@ -31,10 +32,14 @@ public class Main {
         for (int i = 0; i < n; i++) {
             System.out.print("Enter marks for subject " + (i + 1) + ": ");
             marks[i] = sc.nextInt();
+            sc.nextLine();
         }
 
+        System.out.println("Enter the scholarship percentage");
+        double scholarshipPercentage = sc.nextDouble();
+        sc.nextLine();
         // Object instantiation and method execution outside the loop
-        Student student = new Student(studentId, studentName, age, department, marks);
+        Student student = new ScholarshipStudent (studentId, studentName, age, department, marks);
         
         student.displayStudentInfo(true);
         Student.displayStudentCount();
