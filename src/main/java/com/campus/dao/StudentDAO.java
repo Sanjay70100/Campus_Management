@@ -19,8 +19,7 @@ public class StudentDAO {
             pstmt.setString(2, student.getDepartment());
             pstmt.setInt(3, student.getAge());
             pstmt.executeUpdate();
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -34,8 +33,7 @@ public class StudentDAO {
             while (rs.next()) {
                 students.add(new Student(rs.getInt("id"), rs.getString("name"), rs.getString("department"), rs.getInt("age")));
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return students;
@@ -77,8 +75,7 @@ public class StudentDAO {
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
